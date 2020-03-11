@@ -20,7 +20,11 @@ export default class PokemonList extends Component {
             <React.Fragment>
             {this.state.pokemon ? (<div className="row">
             {this.state.pokemon.map((pokemon) => (
-                <PokemonCard />
+                <PokemonCard 
+                key={pokemon.name} // always have a unique key property
+                name={pokemon.name}
+                url={pokemon.url}
+                />
                 ))}
         </div>) : (<h1>Loading Pokemon...</h1>)}
         </React.Fragment>
