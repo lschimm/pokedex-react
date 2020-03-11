@@ -6,7 +6,7 @@ import PokemonCard from './PokemonCard'
 export default class PokemonList extends Component {
     // get pokemon list!
     state= {
-        url: "https://pokeapi.co/api/v2/pokemon",
+        url: "https://pokeapi.co/api/v2/pokemon/",
         pokemon: null
     }
     //visible to the user
@@ -17,13 +17,13 @@ export default class PokemonList extends Component {
     }
     render() {
         return (
-            <div>
+            <React.Fragment>
             {this.state.pokemon ? (<div className="row">
             {this.state.pokemon.map((pokemon) => (
                 <PokemonCard />
                 ))}
         </div>) : (<h1>Loading Pokemon...</h1>)}
-        </div>
+        </React.Fragment>
         )
     }
 }
