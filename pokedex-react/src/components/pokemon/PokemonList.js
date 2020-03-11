@@ -21,7 +21,7 @@ export default class PokemonList extends Component {
             {this.state.pokemon ? (<div className="row">
             {this.state.pokemon.map((pokemon) => (
                 <PokemonCard 
-                key={pokemon.name} // always have a unique key property
+                key={pokemon.name} // always have a unique key
                 name={pokemon.name}
                 url={pokemon.url}
                 />
