@@ -39,9 +39,12 @@ export class PokemonCard extends Component {
                 className="card-img-top rounded mx-auto mt-2" 
                 onLoad={() => this.setState({imageLoading: false})}
                 onError={() => this.setState({tooManyRequests: true})}
-                src={this.state.imageUrl}>
-
-                </Sprite>
+                src={this.state.imageUrl} />
+                {this.state.tooManyRequests ? (
+                    <h6 className='mx-auto'>
+                        <span className="badge badge-danger mt-2">Too Many Requests :(</span>
+                    </h6>
+                ) : null }
                 <div className="card-body mx-auto">
                     <h6 className="card-title">
                         {this.state.name
