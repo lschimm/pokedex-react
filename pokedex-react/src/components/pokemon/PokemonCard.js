@@ -23,11 +23,12 @@ export class PokemonCard extends Component {
         const imageUrl = `https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/${pokemonIndex}.png?raw=true`
     
         this.setState({
-            name: name, 
-            imgUrl: imageUrl, 
-            pokemonIndex: pokemonIndex
+            name,
+            imageUrl,
+            pokemonIndex
         })
     }
+
 
     render() {
         return (
@@ -39,7 +40,7 @@ export class PokemonCard extends Component {
                 onLoad={() => this.setState({imageLoading: false})}
                 onError={() => this.setState({tooManyRequests: true})}
                 src={this.state.imageUrl}>
-                
+
                 </Sprite>
                 <div className="card-body mx-auto">
                     <h6 className="card-title">
