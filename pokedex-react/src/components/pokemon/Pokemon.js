@@ -319,6 +319,11 @@ const TYPE_COLORS = {
                                     </div>
                                 </div>
                             </div>
+                            <div className="row mt-1">
+                                <div className="col">
+                                    <p className="p-3">{this.state.description}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
