@@ -92,6 +92,36 @@ export default class Pokemon extends Component{
             .split('-')
             .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
             .join(' ')
+        }).join(', ')
+
+        // GET poke description, catch rate, egg group, gender ratio, hatch steps (from pokespecies url)
+        await axios.get(pokemonSpeciesUrl).then(res => {
+            let description = ''
+            res.data.flavor_text_entries.some(flavor => {
+                if (flavor.language.name === 'en') {
+                    description = flavor.flavor_text
+                    return
+                }
+            })
+
+        // gives the chance of genders in 1/8ths
+        const femaleRate = res.data['gender_rate']
+        const genderRatioFemale = 12.5 * femaleRate
+        const genderRatioMale = (8 - femaleRate) * 12.5
+
+        // base capture rate is up to 255/ bring it to a 100% scale instead
+        const catchRate = Math.round((100 / 255) * res.data['capture_rate'])
+        
+        const eggGroups = res.data['egg_groups'].map(group => {
+            return group.name.toLowerCase()
+            .split('-')
+            .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+            .join(' ')
+        }).join(', ')
+
+        // 255 steps * hatch counter + 1 before egg is hatched
+        const hatchSteps = 255 * (res.data['hatch_counter'] + 1)
+
         })
     }
 
