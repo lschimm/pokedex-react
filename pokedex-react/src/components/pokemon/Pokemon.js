@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
+// colors for pill badge
 const TYPE_COLORS = {
     bug: 'B1C12E',
     dark: '4F3A2D',
@@ -192,8 +193,16 @@ const TYPE_COLORS = {
                             <div className="col-7">
                                 <div className="float-right">
                                     {this.state.types.map((type) => (
-                                        <span key={type}
-                                        className= "badge badge-primary badge-pill mr-1">{type}</span>
+                                        <span 
+                                        key={type}
+                                        className= "badge badge-primary badge-pill mr-1"
+                                        style={{backgroundColor: `#${TYPE_COLORS[type]}`, color: 'white'}}>
+                                            {type
+                                                .toLowerCase()
+                                                .split(' ')
+                                                .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+                                                .join(' ')}
+                                        </span>
                                     ))}
                                 </div>
                             </div>
