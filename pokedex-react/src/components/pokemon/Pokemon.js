@@ -1,26 +1,6 @@
 import React, { Component } from 'react'
-import Axios from 'axios'
+import axios from 'axios'
 
-const TYPE_COLORS = {
-    bug: 'B1C12E',
-    dark: '4F3A2D',
-    dragon: '755EDF',
-    electric: 'FCBC17',
-    fairy: 'F4B1F4',
-    fighting: '823551D',
-    fire: 'E73B0C',
-    flying: 'A3B3F7',
-    ghost: '6060B2',
-    grass: '74C236',
-    ground: 'D3B357',
-    ice: 'A3E7FD',
-    normal: 'C8C4BC',
-    poison: '934594',
-    psychic: 'ED4882',
-    rock: 'B9A156',
-    steel: 'B5B5C3',
-    water: '3295F6'
-  };
 
   export default class Pokemon extends Component {
     state = {
@@ -59,7 +39,7 @@ const TYPE_COLORS = {
         const pokemonSpeciesUrl = `https://pokeapi.co/api/v2/pokemon-species/${pokemonIndex}/`;
 
         // GET poke info
-        const pokemonRes = await Axios.get(pokemonUrl);
+        const pokemonRes = await axios.get(pokemonUrl);
 
         const name = pokemonRes.data.name;
         const imageUrl = pokemonRes.data.sprites.front_default;
@@ -122,7 +102,7 @@ const TYPE_COLORS = {
         }).join(', ')
 
         // GET poke description, catch rate, egg group, gender ratio, hatch steps (from pokespecies url)
-        await Axios.get(pokemonSpeciesUrl).then(res => {
+        await axios.get(pokemonSpeciesUrl).then(res => {
             let description = ''
             res.data.flavor_text_entries.some(flavor => {
                 if (flavor.language.name === 'en') {
