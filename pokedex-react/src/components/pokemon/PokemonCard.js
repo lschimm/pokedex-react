@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 
 import styled from 'styled-components'
 import spinner from '../img/spinner.gif'
@@ -19,6 +20,17 @@ const Card = styled.div`
     -website-user-select: none;
     user-select: none;
     -o-user-select: none;
+`
+const StyledLink = styled(Link)`
+    text-decoration: none;
+    color: black;
+    &:focus,
+    &:hover,
+    &:visited,
+    &:link,
+    &:active {
+        text-decoration: none;
+    }
 `
 
 export class PokemonCard extends Component {
@@ -47,6 +59,7 @@ export class PokemonCard extends Component {
     render() {
         return (
             <div className="col-md-3 col-sm-6 mb-5">
+                <StyledLink to={`pokemon/${this.state.pokemonIndex}`}>
                 <Card className="card">
                     <h5 className="card-header">{this.state.pokemonIndex}</h5>
                     {this.state.imageLoading ? (
@@ -78,8 +91,9 @@ export class PokemonCard extends Component {
                         </h6>
                     </div>
                 </Card>
+                </StyledLink>
             </div>
-        );
+        )
     }
 }
 //
