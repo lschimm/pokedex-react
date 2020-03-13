@@ -382,13 +382,45 @@ const TYPE_COLORS = {
                                             <small>{this.state.genderRatioMale}</small>
                                         </div>
                                         </div>
-                                        
                                     </div>
-                                    
+                                </div>
+                            </div>
+                            <div className="col-md-6">
+                                <div className="row">
+                                    <div className="col-6">
+                                        <h6 className="float-right">Egg Groups:</h6>
+                                    </div>
+                                <div className="col-6">
+                                    <h6 className="float-left">{this.state.eggGroups}</h6>
+                                </div>
+                                <div className="col-6">
+                                    <h6 className="float-right">Hatch Steps:</h6>
+                                </div>
+                                <div className="col-6">
+                                    <h6 className="float-left">{this.state.hatchSteps}</h6>
+                                </div>
+                                <div className="col-6">
+                                    <h6 className="float-right">Abilities:</h6>
+                                </div>
+                                <div className="col-6">
+                                    <h6 className="float-left">{this.state.abilities}</h6>
+                                </div>
+                                <div className="col-6">
+                                    <h6 className="float-right">EVs:</h6>
+                                </div>
+                                <div className="col-6">
+                                    <h6 className="float-left">{this.state.evs}</h6>
+                                </div>
                                 </div>
                             </div>
                         </div>
                         </div>
+                        <div class="card-footer text-muted">
+            Data From{' '}
+            <a href="https://pokeapi.co/" target="_blank" className="card-link">
+              PokeAPI.co
+            </a>
+          </div>
                     </div>
                 </div>
             </div>
