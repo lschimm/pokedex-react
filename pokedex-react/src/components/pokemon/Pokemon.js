@@ -65,6 +65,21 @@ export default class Pokemon extends Component{
                     break;
             }
         })
+
+        // height is originally in decimeters / converted to feet (0.001 * 100 / rounded to 2 decimal places)
+        const height = Math.round((pokemonRes.data.height * 0.328084 + 0.0001) *100) / 100
+
+        // weight is originally in hectograms / converted to pounds
+        const weight = Math.round((pokemonRes.data.height * 0.220462 + 0.0001) *100) / 100
+
+        const types = pokemonRes.data.types.map((type) => type.type.name)
+        const abilities = pokemonRes.data.abilities.map((ability) => {
+            return ability.ability.name
+            .toLowerCase()
+            .split('-')
+            .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+            .join(' ')
+        })
     }
 
     render() {
