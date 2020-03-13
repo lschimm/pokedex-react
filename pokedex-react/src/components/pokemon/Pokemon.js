@@ -1,43 +1,68 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+import Axios from 'axios'
 
-export default class Pokemon extends Component  {
-    state= {
-        name: '',
-        pokemonIndex: '',
-        imageUrl: '',
-        types: [],
-        description: '',
-        stats: {
-            hp: '',
-            attack: '',
-            defense: '',
-            speed: '',
-            specialAttack: '',
-            specialDefense: ''
-        },
-        height: '',
-        weight: '',
-        eggGroup: '',
-        abilities: '',
-        genderRatioMale: '',
-        genderRatioFemale: '',
-        evs: '',
-        hatchSteps: ''
-    }
+const TYPE_COLORS = {
+    bug: 'B1C12E',
+    dark: '4F3A2D',
+    dragon: '755EDF',
+    electric: 'FCBC17',
+    fairy: 'F4B1F4',
+    fighting: '823551D',
+    fire: 'E73B0C',
+    flying: 'A3B3F7',
+    ghost: '6060B2',
+    grass: '74C236',
+    ground: 'D3B357',
+    ice: 'A3E7FD',
+    normal: 'C8C4BC',
+    poison: '934594',
+    psychic: 'ED4882',
+    rock: 'B9A156',
+    steel: 'B5B5C3',
+    water: '3295F6'
+  };
 
+  export default class Pokemon extends Component {
+    state = {
+      name: '',
+      pokemonIndex: '',
+      imageUrl: '',
+      types: [],
+      description: '',
+      statTitleWidth: 3,
+      statBarWidth: 9,
+      stats: {
+        hp: '',
+        attack: '',
+        defense: '',
+        speed: '',
+        specialAttack: '',
+        specialDefense: ''
+      },
+      height: '',
+      weight: '',
+      eggGroups: '',
+      catchRate: '',
+      abilities: '',
+      genderRatioMale: '',
+      genderRatioFemale: '',
+      evs: '',
+      hatchSteps: '',
+      themeColor: '#EF5350'
+    };
+  
     async componentDidMount() {
-        const { pokemonIndex } = this.props.match.params
+      const { pokemonIndex } = this.props.match.params;
 
         // URLs for poke info
-        const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonIndex}/`
-        const pokemonSpeciesUrl = `https://pokeapi.co/api.v2/pokemon-species/${pokemonIndex}/`
+        const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonIndex}/`;
+        const pokemonSpeciesUrl = `https://pokeapi.co/api/v2/pokemon-species/${pokemonIndex}/`;
 
         // GET poke info
-        const pokemonRes = await axios.get(pokemonUrl)
+        const pokemonRes = await Axios.get(pokemonUrl);
 
-        const name = pokemonRes.data.name
-        const imageUrl = pokemonRes.data.sprites.front_default
+        const name = pokemonRes.data.name;
+        const imageUrl = pokemonRes.data.sprites.front_default;
 
         let { hp, attack, defense, speed, specialAttack, specialDefense } = ''
 
@@ -97,7 +122,7 @@ export default class Pokemon extends Component  {
         }).join(', ')
 
         // GET poke description, catch rate, egg group, gender ratio, hatch steps (from pokespecies url)
-        await axios.get(pokemonSpeciesUrl).then(res => {
+        await Axios.get(pokemonSpeciesUrl).then(res => {
             let description = ''
             res.data.flavor_text_entries.some(flavor => {
                 if (flavor.language.name === 'en') {
@@ -161,6 +186,7 @@ export default class Pokemon extends Component  {
                     <div className="card-header">
                         <div className="row">
                             <div className="col-5">
+                                {this.state.name}
                                 <h5>{this.state.pokemonIndex}</h5>
                             </div>
                             <div className="col-7">
