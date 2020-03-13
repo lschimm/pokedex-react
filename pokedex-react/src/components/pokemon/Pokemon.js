@@ -131,6 +131,25 @@ export default class Pokemon extends Component{
             hatchSteps
         })
         })
+
+        this.setState({
+            imageUrl,
+            pokemonIndex,
+            name,
+            types,
+            stats: {
+                hp,
+                attack,
+                defense,
+                speed,
+                specialAttack,
+                specialDefense
+            },
+            height,
+            weight,
+            abilities,
+            evs
+        })
     }
 
     render() {
