@@ -334,11 +334,57 @@ const TYPE_COLORS = {
                             <div className="col-md-6">
                                 <div className="row">
                                     <div className="col-md-6">
-                                        <h6 className="float-right">Height: </h6>
+                                        <h6 className="float-right">Height:</h6>
                                     </div>
                                     <div className="col-md-6">
-                                        <h6 className="float-left">{this.state.height}</h6>
+                                        <h6 className="float-left">{this.state.height} feet</h6>
                                     </div>
+                                    <div className="col-6">
+                                        <h6 className="float-right">Weight:</h6>
+                                    </div>
+                                    <div className="col-6">
+                                        <h6 className="float-left">{this.state.weight} lbs</h6>
+                                    </div>
+                                    <div className="col-6">
+                                        <h6 className="float-right">Catch Rate:</h6>
+                                    </div>
+                                    <div className="col-6">
+                                        <h6 className="float-left">{this.state.catchRate}%</h6>
+                                    </div>
+                                    <div className="col-6">
+                                        <h6 className="float-right">Gender Ratio:</h6>
+                                    </div>
+                                    <div className="col-6">
+                                        <div className="progress">
+                                            <div
+                                            className="progress-bar"
+                                            role="progressbar"
+                                            style={{
+                                                width: `${this.state.genderRatioFemale}%`,
+                                                backgroundColor: '#c2185b'
+                                            }}
+                                            aria-valuenow="15"
+                                            aria-valuemin="0"
+                                            aria-valuemax="100">
+                                            <small>{this.state.genderRatioFemale}</small>
+                                        </div>
+                                        <div
+                                            class="progress-bar"
+                                            role="progressbar"
+                                            style={{
+                                            width: `${this.state.genderRatioMale}%`,
+                                            backgroundColor: '#1976d2'
+                                            }}
+                                            aria-valuenow="30"
+                                            aria-valuemin="0"
+                                            aria-valuemax="100"
+                                        >
+                                            <small>{this.state.genderRatioMale}</small>
+                                        </div>
+                                        </div>
+                                        
+                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
