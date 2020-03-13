@@ -80,6 +80,19 @@ export default class Pokemon extends Component{
             .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
             .join(' ')
         })
+        const evs = pokemonRes.data.stats.filter((stat) => {
+            if (stat.effort > 0) {
+                return true
+            } else {
+            return false
+        }
+        }).map((stat) => {
+            return `${stat.effort} ${stat.stat.name}`
+            .toLowerCase()
+            .split('-')
+            .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+            .join(' ')
+        })
     }
 
     render() {
