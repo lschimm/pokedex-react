@@ -416,11 +416,11 @@ const TYPE_COLORS = {
                         </div>
                         </div>
                         <div class="card-footer text-muted">
-            Data From{' '}
-            <a href="https://pokeapi.co/" target="_blank" className="card-link">
-              PokeAPI.co
-            </a>
-          </div>
+                            Data From{' '}
+                            <a href="https://pokeapi.co/" target="_blank" className="card-link">
+                            PokeAPI.co
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
