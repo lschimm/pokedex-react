@@ -154,9 +154,25 @@ export default class Pokemon extends Component{
 
     render() {
         return (
-        <div>
-            <h1>{this.state.name}</h1>
-        </div>
+            <div className = "col">
+                <div className="card">
+                    <div className="card-header">
+                        <div className="row">
+                            <div className="col-5">
+                                <h5>{this.state.pokemonIndex}</h5>
+                            </div>
+                            <div className="col-7">
+                                <div className="float-right">
+                                    {this.state.types.map((type) => (
+                                        <span key={type}
+                                        className= "badge badge-pill mr-1">{type}</span>
+                                        ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         )
     }
 }
