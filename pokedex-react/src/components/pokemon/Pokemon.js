@@ -326,6 +326,24 @@ const TYPE_COLORS = {
                             </div>
                         </div>
                     </div>
+                    <hr />
+                    <div className="card-body">
+                        <div className="card-title text-center">
+                        <h5>Profile</h5>
+                        <div className="row">
+                            <div className="col-md-6">
+                                <div className="row">
+                                    <div className="col-md-6">
+                                        <h6 className="float-right">Height: </h6>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <h6 className="float-left">{this.state.height}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         )
