@@ -187,7 +187,11 @@ const TYPE_COLORS = {
                     <div className="card-header">
                         <div className="row">
                             <div className="col-5">
-                                {this.state.name}
+                                {this.state.name
+                                .toLowerCase()
+                                .split(' ')
+                                .map(s => s.charAt(0).toUpperCase() + s.substring(1))
+                                .join(' ')}
                                 <h5>{this.state.pokemonIndex}</h5>
                             </div>
                             <div className="col-7">
