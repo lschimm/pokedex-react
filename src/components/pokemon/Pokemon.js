@@ -193,8 +193,8 @@ const TYPE_COLORS = {
                 <div className="card">
                     <div className="card-header">
                         <div className="row">
-                            <NameCard className="col-5 name-holder">
-                                <h4 className="pokemon-index">#{this.state.pokemonIndex}</h4>
+                            <NameCard className="col-5 text-centername-holder">
+                                <h4 className="pokemon-index ">#{this.state.pokemonIndex}</h4>
                                 {this.state.name
                                 .toLowerCase()
                                 .split(' ')
