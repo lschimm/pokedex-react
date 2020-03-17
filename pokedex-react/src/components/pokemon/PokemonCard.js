@@ -96,6 +96,5 @@ export class PokemonCard extends Component {
         )
     }
 }
-//
 
 export default PokemonCard;
