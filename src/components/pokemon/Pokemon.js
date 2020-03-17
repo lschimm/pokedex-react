@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
+import styled from 'styled-components'
+
+const NameCard = styled.div`
+    font-size: 2.5em;
+`
+
 // colors for pill badge
 const TYPE_COLORS = {
     bug: 'B1C12E',
@@ -186,14 +192,14 @@ const TYPE_COLORS = {
                 <div className="card">
                     <div className="card-header">
                         <div className="row">
-                            <div className="col-5">
+                            <NameCard className="col-5 name-holder">
                                 {this.state.name
                                 .toLowerCase()
                                 .split(' ')
                                 .map(s => s.charAt(0).toUpperCase() + s.substring(1))
                                 .join(' ')}
                                 <h5>{this.state.pokemonIndex}</h5>
-                            </div>
+                            </NameCard>
                             <div className="col-7">
                                 <div className="float-right">
                                     {this.state.types.map((type) => (
@@ -216,6 +222,7 @@ const TYPE_COLORS = {
                         <div className="row align-items-center">
                             <div className="col-md-3">
                                 <img 
+                                alt="pokemon-sprite"
                                 src={this.state.imageUrl}
                                 className="card-img-top rounded mx-auto mt-2"
                                 />
