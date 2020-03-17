@@ -7,6 +7,7 @@ const NameCard = styled.div`
     font-size: 2.5em;
 `
 
+
 // colors for pill badge
 const TYPE_COLORS = {
     bug: 'B1C12E',
@@ -193,12 +194,12 @@ const TYPE_COLORS = {
                     <div className="card-header">
                         <div className="row">
                             <NameCard className="col-5 name-holder">
+                                <h4 className="pokemon-index">#{this.state.pokemonIndex}</h4>
                                 {this.state.name
                                 .toLowerCase()
                                 .split(' ')
                                 .map(s => s.charAt(0).toUpperCase() + s.substring(1))
                                 .join(' ')}
-                                <h5>{this.state.pokemonIndex}</h5>
                             </NameCard>
                             <div className="col-7">
                                 <div className="float-right">
