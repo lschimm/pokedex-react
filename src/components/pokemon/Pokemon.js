@@ -334,7 +334,7 @@ const TYPE_COLORS = {
                             </div>
                             <div className="row mt-1">
                                 <div className="col">
-                                    <p className="p-3">{this.state.description}</p>
+                                    <p className="px-5">{this.state.description}</p>
                                 </div>
                             </div>
                         </div>
@@ -342,7 +342,7 @@ const TYPE_COLORS = {
                     <hr />
                     <div className="card-body">
                         <div className="card-title text-center">
-                            <h5>Profile</h5>
+                            <h4>Profile</h4>
                             <div className="row">
                                 <div className="col-md-6">
                                     <div className="row">
