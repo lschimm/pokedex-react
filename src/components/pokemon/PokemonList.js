@@ -9,11 +9,14 @@ export default class PokemonList extends Component {
         url: "https://pokeapi.co/api/v2/pokemon/",
         pokemon: null
     }
+    
     //visible to the user
-  async componentDidMount() {
-    const res = await axios.get(this.state.url);
-    this.setState({ pokemon: res.data['results'] });
-  }
+    async componentDidMount() {
+        const res = await axios.get(this.state.url)
+        this.setState({pokemon: res.data['results'] })
+        // this.setState to rerun 
+    }
+
     render() {
         return (
             <React.Fragment>
