@@ -229,7 +229,7 @@ const TYPE_COLORS = {
                                 className="card-img-top rounded mx-auto mt-2"
                                 />
                             </div>
-                            <div className="col-md-9">
+                            <div className="col-md-9 pl-5">
                                 {/* <h4 className="mx-auto">{this.state.name.toLowerCase()
                                                 .split(' ')
                                                 .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
@@ -237,7 +237,7 @@ const TYPE_COLORS = {
                                 </h4> */}
                                 <div className="row align-items-center">
                                     <div className="col-12 col-md-3">HP</div>
-                                    <div className="col-12 col-md-9">
+                                    <div className="col-12 col-md-8">
                                         <div className="progress">
                                             <div 
                                             className="progress-bar" 
@@ -253,7 +253,7 @@ const TYPE_COLORS = {
                                 </div>
                                 <div className="row align-items-center">
                                     <div className="col-12 col-md-3">Attack</div>
-                                    <div className="col-12 col-md-9">
+                                    <div className="col-12 col-md-8">
                                         <div className="progress">
                                             <div 
                                             className="progress-bar" 
@@ -269,7 +269,7 @@ const TYPE_COLORS = {
                                 </div>
                                 <div className="row align-items-center">
                                     <div className="col-12 col-md-3">Defense</div>
-                                    <div className="col-12 col-md-9">
+                                    <div className="col-12 col-md-8">
                                         <div className="progress">
                                             <div 
                                             className="progress-bar" 
@@ -285,7 +285,7 @@ const TYPE_COLORS = {
                                 </div>
                                 <div className="row align-items-center">
                                     <div className="col-12 col-md-3">Speed</div>
-                                    <div className="col-12 col-md-9">
+                                    <div className="col-12 col-md-8">
                                         <div className="progress">
                                             <div 
                                             className="progress-bar" 
@@ -301,7 +301,7 @@ const TYPE_COLORS = {
                                 </div>
                                 <div className="row align-items-center">
                                     <div className="col-12 col-md-3">Special Attack</div>
-                                    <div className="col-12 col-md-9">
+                                    <div className="col-12 col-md-8">
                                         <div className="progress">
                                             <div 
                                             className="progress-bar" 
@@ -317,7 +317,7 @@ const TYPE_COLORS = {
                                 </div>
                                 <div className="row align-items-center">
                                     <div className="col-12 col-md-3">Special Defense</div>
-                                    <div className="col-12 col-md-9">
+                                    <div className="col-12 col-md-8">
                                         <div className="progress">
                                             <div 
                                             className="progress-bar" 
@@ -374,7 +374,7 @@ const TYPE_COLORS = {
                                                 role="progressbar"
                                                 style={{
                                                     width: `${this.state.genderRatioFemale}%`,
-                                                    backgroundColor: '#ff9fb0'
+                                                    backgroundColor: '#ff758d'
                                                 }}
                                                 aria-valuenow="15"
                                                 aria-valuemin="0"
