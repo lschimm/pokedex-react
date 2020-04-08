@@ -433,6 +433,7 @@ const TYPE_COLORS = {
                             <a href="https://pokeapi.co/" target="_blank" className="card-link">
                             PokeAPI.co
                             </a>
+                            <div>Background icons from <a href="https://www.flaticon.com/authors/darius-dan" title="Darius Dan">Darius Dan</a></div>
                         </div>
                     </div>
                 </div>
