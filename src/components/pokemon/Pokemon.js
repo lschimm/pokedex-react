@@ -8,6 +8,7 @@ const NameCard = styled.div`
 `
 
 
+
 // colors for pill badge
 const TYPE_COLORS = {
     bug: 'B1C12E',
@@ -206,7 +207,7 @@ const TYPE_COLORS = {
                                     {this.state.types.map((type) => (
                                         <span 
                                         key={type}
-                                        className= "badge badge-primary badge-pill mr-1"
+                                        className= "badge badge-primary badge-pill mr-2"
                                         style={{backgroundColor: `#${TYPE_COLORS[type]}`, color: 'white'}}>
                                             {type
                                                 .toLowerCase()
