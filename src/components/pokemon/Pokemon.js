@@ -333,7 +333,7 @@ const TYPE_COLORS = {
                                 </div>
                             </div>
                             <div className="row mt-1">
-                                <div className="col pl-5">
+                                <div className="col">
                                     <p className="px-5">{this.state.description}</p>
                                 </div>
                             </div>
