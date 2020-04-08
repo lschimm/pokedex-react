@@ -10,11 +10,10 @@ export default class PokemonList extends Component {
         pokemon: null
     }
     //visible to the user
-    async componentDidMount() {
-        const res = await axios.get(this.state.url)
-        this.setState({pokemon: res.data['results'] })
-        // this.setState to rerun 
-    }
+  async componentDidMount() {
+    const res = await axios.get(this.state.url);
+    this.setState({ pokemon: res.data['results'] });
+  }
     render() {
         return (
             <React.Fragment>
