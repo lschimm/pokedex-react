@@ -1,6 +1,14 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
+import styled from 'styled-components'
+
+const NameCard = styled.div`
+    font-size: 2.5em;
+`
+
+
+
 // colors for pill badge
 const TYPE_COLORS = {
     bug: 'B1C12E',
@@ -186,20 +194,20 @@ const TYPE_COLORS = {
                 <div className="card">
                     <div className="card-header">
                         <div className="row">
-                            <div className="col-5">
+                            <NameCard className="col-5 text-centername-holder">
+                                <h4 className="pokemon-index ">{this.state.pokemonIndex}</h4>
                                 {this.state.name
                                 .toLowerCase()
                                 .split(' ')
                                 .map(s => s.charAt(0).toUpperCase() + s.substring(1))
                                 .join(' ')}
-                                <h5>{this.state.pokemonIndex}</h5>
-                            </div>
+                            </NameCard>
                             <div className="col-7">
                                 <div className="float-right">
                                     {this.state.types.map((type) => (
                                         <span 
                                         key={type}
-                                        className= "badge badge-primary badge-pill mr-1"
+                                        className= "badge badge-primary badge-pill mr-2"
                                         style={{backgroundColor: `#${TYPE_COLORS[type]}`, color: 'white'}}>
                                             {type
                                                 .toLowerCase()
@@ -216,19 +224,20 @@ const TYPE_COLORS = {
                         <div className="row align-items-center">
                             <div className="col-md-3">
                                 <img 
+                                alt="pokemon-sprite"
                                 src={this.state.imageUrl}
                                 className="card-img-top rounded mx-auto mt-2"
                                 />
                             </div>
-                            <div className="col-md-9">
-                                <h4 className="mx-auto">{this.state.name.toLowerCase()
+                            <div className="col-md-9 pl-5">
+                                {/* <h4 className="mx-auto">{this.state.name.toLowerCase()
                                                 .split(' ')
                                                 .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
                                                 .join(' ')}
-                                </h4>
+                                </h4> */}
                                 <div className="row align-items-center">
                                     <div className="col-12 col-md-3">HP</div>
-                                    <div className="col-12 col-md-9">
+                                    <div className="col-12 col-md-8">
                                         <div className="progress">
                                             <div 
                                             className="progress-bar" 
@@ -244,7 +253,7 @@ const TYPE_COLORS = {
                                 </div>
                                 <div className="row align-items-center">
                                     <div className="col-12 col-md-3">Attack</div>
-                                    <div className="col-12 col-md-9">
+                                    <div className="col-12 col-md-8">
                                         <div className="progress">
                                             <div 
                                             className="progress-bar" 
@@ -260,7 +269,7 @@ const TYPE_COLORS = {
                                 </div>
                                 <div className="row align-items-center">
                                     <div className="col-12 col-md-3">Defense</div>
-                                    <div className="col-12 col-md-9">
+                                    <div className="col-12 col-md-8">
                                         <div className="progress">
                                             <div 
                                             className="progress-bar" 
@@ -276,7 +285,7 @@ const TYPE_COLORS = {
                                 </div>
                                 <div className="row align-items-center">
                                     <div className="col-12 col-md-3">Speed</div>
-                                    <div className="col-12 col-md-9">
+                                    <div className="col-12 col-md-8">
                                         <div className="progress">
                                             <div 
                                             className="progress-bar" 
@@ -292,7 +301,7 @@ const TYPE_COLORS = {
                                 </div>
                                 <div className="row align-items-center">
                                     <div className="col-12 col-md-3">Special Attack</div>
-                                    <div className="col-12 col-md-9">
+                                    <div className="col-12 col-md-8">
                                         <div className="progress">
                                             <div 
                                             className="progress-bar" 
@@ -308,7 +317,7 @@ const TYPE_COLORS = {
                                 </div>
                                 <div className="row align-items-center">
                                     <div className="col-12 col-md-3">Special Defense</div>
-                                    <div className="col-12 col-md-9">
+                                    <div className="col-12 col-md-8">
                                         <div className="progress">
                                             <div 
                                             className="progress-bar" 
@@ -325,7 +334,7 @@ const TYPE_COLORS = {
                             </div>
                             <div className="row mt-1">
                                 <div className="col">
-                                    <p className="p-3">{this.state.description}</p>
+                                    <p className="px-5">{this.state.description}</p>
                                 </div>
                             </div>
                         </div>
@@ -333,7 +342,7 @@ const TYPE_COLORS = {
                     <hr />
                     <div className="card-body">
                         <div className="card-title text-center">
-                            <h5>Profile</h5>
+                            <h4>Profile</h4>
                             <div className="row">
                                 <div className="col-md-6">
                                     <div className="row">
@@ -365,7 +374,7 @@ const TYPE_COLORS = {
                                                 role="progressbar"
                                                 style={{
                                                     width: `${this.state.genderRatioFemale}%`,
-                                                    backgroundColor: '#c2185b'
+                                                    backgroundColor: '#ff758d'
                                                 }}
                                                 aria-valuenow="15"
                                                 aria-valuemin="0"
@@ -377,7 +386,7 @@ const TYPE_COLORS = {
                                                 role="progressbar"
                                                 style={{
                                                 width: `${this.state.genderRatioMale}%`,
-                                                backgroundColor: '#1976d2'
+                                                backgroundColor: '#369bff'
                                                 }}
                                                 aria-valuenow="30"
                                                 aria-valuemin="0"
@@ -424,6 +433,7 @@ const TYPE_COLORS = {
                             <a href="https://pokeapi.co/" target="_blank" className="card-link">
                             PokeAPI.co
                             </a>
+                            <div>Background icons from <a href="https://www.flaticon.com/authors/darius-dan" title="Darius Dan">Darius Dan</a></div>
                         </div>
                     </div>
                 </div>
