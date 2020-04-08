@@ -374,7 +374,7 @@ const TYPE_COLORS = {
                                                 role="progressbar"
                                                 style={{
                                                     width: `${this.state.genderRatioFemale}%`,
-                                                    backgroundColor: '#c2185b'
+                                                    backgroundColor: '#ff9fb0'
                                                 }}
                                                 aria-valuenow="15"
                                                 aria-valuemin="0"
@@ -386,7 +386,7 @@ const TYPE_COLORS = {
                                                 role="progressbar"
                                                 style={{
                                                 width: `${this.state.genderRatioMale}%`,
-                                                backgroundColor: '#1976d2'
+                                                backgroundColor: '#369bff'
                                                 }}
                                                 aria-valuenow="30"
                                                 aria-valuemin="0"
